@@ -15,13 +15,17 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(router)
 app.use('/nubia', nubiaRouter)
 
+//setup a static resources
 app.use(express.static(path.join('home')))
 
+//setup a view engine
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'home'))
 
-app.listen(3000, function(){
-	console.log('server starts at port 3000')
+var port = process.env.PORT || 3000;
+//listen on the port in order to run the app in the browser
+app.listen(port, function(){
+	console.log(`server starts at port ${port}`)
 })
 
 app.get('/', function(req, res){
