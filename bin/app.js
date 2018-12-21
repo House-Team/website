@@ -10,7 +10,6 @@ let app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
-
 // use external router module
 app.use(router)
 app.use('/nubia', nubiaRouter)
@@ -22,7 +21,7 @@ app.use(express.static(path.join('home')))
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'home'))
 
-var port = process.env.PORT || 3000;
+var port = process.env.port || 3000;
 //listen on the port in order to run the app in the browser
 app.listen(port, function(){
 	console.log(`server starts at port ${port}`)
