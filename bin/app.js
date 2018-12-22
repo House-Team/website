@@ -3,6 +3,9 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const router = require('./router/route')
 const nubiaRouter = require('./router/nubia-route')
+const nubiaClients = require('./db/nubia-client')
+
+console.log()
 
 // invoke express minimalistic liberary
 const app = express()
@@ -29,13 +32,12 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
 	res.render('index', {
-		title: 'Script House Technical Team & IT Support'
+		title: 'Script House Technical Team & IT Support',
+		client1: nubiaClients.clientInfo_1,
+		client2: nubiaClients.clientInfo_2,
+		client3: nubiaClients.clientInfo_3
 	})
 })
-
-
-
-
 
 
 

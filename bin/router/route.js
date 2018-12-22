@@ -1,12 +1,17 @@
 // create var that take express router value and invoke routing
 let router = require('express').Router()
+const nubiaClients = require('../db/nubia-client')
 
 
 let subTitle = 'Script House Technical Team';
 // Home router
 router.get('/home', (req, res) => {
 	res.render('index',{
-		title: `${subTitle} & IT Support`
+		title: `${subTitle} & IT Support`,
+		client1: nubiaClients.clientInfo_1,
+		client2: nubiaClients.clientInfo_2,
+		client3: nubiaClients.clientInfo_3
+
 	})
 })
 
