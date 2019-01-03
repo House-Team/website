@@ -146,12 +146,7 @@
         });
     }
 
-    // :: 10.0 Sticky Active Code
-    if ($.fn.sticky) {
-        $(".alazea-main-menu").sticky({
-            topSpacing: 0
-        });
-    }
+
 
     // :: 11.0 Tooltip Active Code
     if ($.fn.tooltip) {
@@ -185,9 +180,44 @@
         $.preventDefault();
     });
 
+
+    if ($.fn.sticky) {
+        $(".alazea-main-menu").sticky({
+            topSpacing: 0,
+            className: "is-sticky"
+        });
+    }
     // :: 14.0 wow Active Code
     if (browserWindow.width() > 767) {
         new WOW().init();
     }
+
+    browserWindow.scroll(function(){
+
+        let scrollVal = $(this).scrollTop();
+
+        let elemText = document.getElementById('text-style-hash');
+
+        $(elemText).css({
+            'transform': 'translate(0, -'+ scrollVal / 2 +'px)',
+        })
+
+        if(scrollVal >= 90){
+            $(elemText).css({
+                'transition': 'all ease 200ms',
+                'opacity': '0'
+            })
+        }else if(scrollVal <= 0){
+            $(elemText).css({
+                'opacity': '1'
+            })
+        }
+
+        // :: 10.0 Sticky Active Code
+        
+
+    })
+
+    
 
 })(jQuery);
