@@ -4,17 +4,6 @@ const nubiaClients = require('../db/nubia-client')
 
 
 let subTitle = 'Script House Technical Team';
-// Home router
-router.get('/home', (req, res) => {
-	res.render('index',{
-		title: `${subTitle} & IT Support`,
-		client1: nubiaClients.clientInfo_1,
-		client2: nubiaClients.clientInfo_2,
-		client3: nubiaClients.clientInfo_3
-
-	})
-})
-
 
 // a get route for about page
 router.get('/about', (req, res) => {
@@ -56,6 +45,13 @@ router.get('/single-post', (req, res) => {
 router.get('/blog', (req, res) => {
 	res.render('blog', {
 		title: `${subTitle} | Blog`
+	})
+})
+
+// rendering blog page
+router.get('/test', (req, res) => {
+	res.render('test', {
+		title: `${subTitle} | test`
 	})
 })
 

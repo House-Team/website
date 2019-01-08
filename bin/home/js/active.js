@@ -218,6 +218,36 @@
 
     })
 
-    
+    // contact chatter
+    let msgHelper = $('#msg-help');
+    msgHelper.on('click', function(){
+        $('.chat-wrapper').css({
+            'display': 'block',
+            'opacity': '1'
+        })
+        $(this).css({
+            'opacity': '0',
+            'display': 'none'
+        })
+    })
+
+    $('#close-chat-wrapper').on('click', function(){
+        $('.chat-wrapper').css({
+            'display': 'none'
+        })
+        $(msgHelper).css({
+            'display': 'none'
+        }) 
+    })
+
+    $('#minimize-chat-wrapper').on('click', function(){
+        $('.chat-wrapper').css({
+            'display': 'none',
+        })
+        $(msgHelper).css({
+            'display': 'block',
+            'opacity': '1'
+        })
+    })
 
 })(jQuery);
