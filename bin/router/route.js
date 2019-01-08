@@ -48,12 +48,5 @@ router.get('/blog', (req, res) => {
 	})
 })
 
-// rendering blog page
-router.get('/test', (req, res) => {
-	res.render('test', {
-		title: `${subTitle} | test`
-	})
-})
-
 // exports router module for outside uses
 module.exports  = router;
