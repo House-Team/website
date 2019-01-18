@@ -1,15 +1,18 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const path = require('path')
-const router = require('./router/route')
-const nubiaRouter = require('./router/nubia-route')
-const nubiaClients = require('./db/nubia-client')
-const expressValidator = require('express-validator')
-
-console.log()
+let express = require('express');
+let bodyParser = require('body-parser');
+let path = require('path');
 
 // invoke express minimalistic liberary
-const app = express()
+let app = express();
+let server = require('http').createServer(app);
+let io = require('socket.io').listen(server);
+
+let router = require('./router/route')
+let nubiaRouter = require('./router/nubia-route')
+let nubiaClients = require('./db/nubia-client')
+let expressValidator = require('express-validator')
+
+let connections = [];
 
 // use external router module
 app.use(router)
@@ -94,8 +97,21 @@ app.post('/contact', (req, res) => {
 		console.log(newContact)
 	}
 
-	
 })
+
+io.sockets.on('connection', function(socket){
+	connections.push(socket);
+	// testing the sockets length for pushing it onto the array
+	console.log(`Connected:There %s sockets connected`, connections.length);
+
+	//disconnected
+	socket.on('disconnect', function(data){
+		
+		connections.splice(connections.indexOf(socket), 1);
+		console.log('Disconnected: %s sockets connected', connections.length);
+	})
+})
+
 
 
 
