@@ -1,0 +1,27 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "<h1>Script House Website Project</h1> <strong>You Need To Do The Next Few Steps In Order To Run The Application</strong> <ul> <li>Download or clone this repo</li> <li>Open up a terminal in the repo and type in <strong>sudo chmod +x run.sh</strong> </li> <li>Then run the script run.sh by configure it <strong>./run.sh</strong></li> <li>Open up a browser and type in <strong>localhost:3000/</strong></li> </ul>",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/House-Team/Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/House-Team/Website/issues"
+  },
+  "homepage": "https://github.com/House-Team/Website#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-generator": "^4.16.0",
+    "mongoose": "^5.4.5",
+    "socket.io": "^2.2.0"
+  }
+}
