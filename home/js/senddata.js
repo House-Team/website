@@ -47,19 +47,6 @@ let blogPostData = function(){
     })
 
 
-    // comments system
-    
-  //   let today = new Date(),
-  //   	hour = today.getHours(),
-  //   	min = today.getMinutes(),
-	 //    day = today.getDate(),
-	 //    month = today.getMonth()+1, //January is 0!
-		// year = today.getFullYear();
-
-   
-	
-
-
 }();
 
 

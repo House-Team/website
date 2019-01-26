@@ -7,6 +7,7 @@ let commentBtn = $('#comment-btn');
 let commentsCount = $('.comments-count');
 
 
+
 let postHeader = postTitle.context.URL.split('=')[1];
     
 
